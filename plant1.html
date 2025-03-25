@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+   <head>
+      <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      <meta name="description" content="Upload plant images to instantly detect diseases with our AI-powered Plant Disease Detection tool. Get accurate diagnoses, prevention tips, and treatment recommendations.">
+      <meta name="theme-color" content="#ffffff">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="robots" content="">
+
+      <title>PlantCare | Plant Disease Detection</title>
+      <!-- SEO Description -->
+      <meta name="description" content="Upload plant images to instantly detect diseases with our AI-powered Plant Disease Detection tool. Get accurate diagnoses, prevention tips, and treatment recommendations.">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <!-- Performance optimization: Preload critical resources -->
+      <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
+      
+      <!-- Header Scripts -->
+      <script id="header-scripts">
+        // This script tag will be replaced with actual scripts.head content
+        if (window.scripts && window.scripts.head) {
+          document.getElementById('header-scripts').outerHTML = window.scripts.head;
+        }
+      </script>
+
+      <!-- Preconnect -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- Font stylesheet -->
+
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
+
+      <!-- Core CSS -->
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script>
+      // render the settings object
+      //console.log('settings', [object Object]);
+      document.addEventListener('DOMContentLoaded', function() {
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primary: {
+                  DEFAULT: '#2E7D32',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8', 
+                  200: '#d3d3d3',
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                secondary: {
+                  DEFAULT: '#8BC34A',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3', 
+                  300: '#a3a3a3',
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+                accent: {
+                  DEFAULT: '',
+                  50: '#f8f8f8',
+                  100: '#e8e8e8',
+                  200: '#d3d3d3',
+                  300: '#a3a3a3', 
+                  400: '#737373',
+                  500: '#525252',
+                  600: '#404040',
+                  700: '#262626',
+                  800: '#171717',
+                  900: '#0a0a0a',
+                  950: '#030303',
+                },
+              },
+              fontFamily: {
+                sans: ['Poppins, sans-serif', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                heading: ['Roboto, sans-serif', 'Inter', 'system-ui', 'sans-serif'],
+                body: ['Roboto, sans-serif', 'Inter', 'system-ui', 'sans-serif'],
+              },
+              spacing: {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+              },
+              maxWidth: {
+                '8xl': '88rem',
+                '9xl': '96rem',
+              },
+              animation: {
+                'fade-in': 'fadeIn 0.5s ease-in',
+                'fade-out': 'fadeOut 0.5s ease-out',
+                'slide-up': 'slideUp 0.5s ease-out',
+                'slide-down': 'slideDown 0.5s ease-out',
+                'slide-left': 'slideLeft 0.5s ease-out',
+                'slide-right': 'slideRight 0.5s ease-out',
+                'scale-in': 'scaleIn 0.5s ease-out',
+                'scale-out': 'scaleOut 0.5s ease-out',
+                'spin-slow': 'spin 3s linear infinite',
+                'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'bounce-slow': 'bounce 3s infinite',
+                'float': 'float 3s ease-in-out infinite',
+              },
+              keyframes: {
+                fadeIn: {
+                  '0%': { opacity: '0' },
+                  '100%': { opacity: '1' },
+                },
+                fadeOut: {
+                  '0%': { opacity: '1' },
+                  '100%': { opacity: '0' },
+                },
+                slideUp: {
+                  '0%': { transform: 'translateY(20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideDown: {
+                  '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateY(0)', opacity: '1' },
+                },
+                slideLeft: {
+                  '0%': { transform: 'translateX(20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                slideRight: {
+                  '0%': { transform: 'translateX(-20px)', opacity: '0' },
+                  '100%': { transform: 'translateX(0)', opacity: '1' },
+                },
+                scaleIn: {
+                  '0%': { transform: 'scale(0.9)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                scaleOut: {
+                  '0%': { transform: 'scale(1.1)', opacity: '0' },
+                  '100%': { transform: 'scale(1)', opacity: '1' },
+                },
+                float: {
+                  '0%, 100%': { transform: 'translateY(0)' },
+                  '50%': { transform: 'translateY(-10px)' },
+                },
+              },
+              aspectRatio: {
+                'portrait': '3/4',
+                'landscape': '4/3',
+                'ultrawide': '21/9',
+              },
+            },
+          },
+          variants: {
+            extend: {
+              opacity: ['disabled'],
+              cursor: ['disabled'],
+              backgroundColor: ['active', 'disabled'],
+              textColor: ['active', 'disabled'],
+            },
+          },
+        }
+      });
+      </script>
+
+      <!-- Utilities and Components -->
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.3/cdn.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.45.1/apexcharts.min.js"></script>
+      
+      <!-- Optimized Font Loading -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      
+      <!-- Icons -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- Dynamic Meta Tags -->
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="robots" content="">
+      <meta name="google-site-verification" content="">
+      <meta name="baidu-verification" content="">
+      <meta name="yandex-verification" content="">
+      <meta name="bing-verification" content="">
+      <meta property="og:title" content="">
+      <meta property="og:description" content="">
+      <meta property="og:image" content="">
+      <meta property="og:type" content="website">
+      <meta property="og:locale" content="en_US">
+      <meta property="og:site_name" content="Plant Disease Detection Web App">
+      <meta name="twitter:card" content="summary_large_image">
+      <meta name="twitter:title" content="">
+      <meta name="twitter:description" content="">
+      <meta name="twitter:image" content="">
+    
+      
+      <!-- Font Links -->
+     
+      <link rel="icon" type="image/x-icon" href="">
+
+      <style>
+        h1, h2, h3, h4, h5, h6 {
+          font-family: Poppins, sans-serif, Inter, system-ui, sans-serif;
+        }
+        body {
+          font-family: Roboto, sans-serif, Inter, system-ui, sans-serif;
+        }
+
+      </style>
+   </head>
+   <body class="antialiased text-gray-800 min-h-screen flex flex-col">
+      <!-- Skip to main content link for accessibility -->
+      <a href="#main-content" 
+         class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-white focus:text-black">
+         Skip to main content
+      </a>
+
+      <!-- Main content area -->
+      <main id="main-content" class="flex-1 relative h-full">
+        <div id="RolloutPageContent"><element id="090dfc6b-83da-41d4-9d83-6062d0137691" data-section-id="090dfc6b-83da-41d4-9d83-6062d0137691">
+
+
+                
+<div id="root">
+  <header id="header">
+    <nav class="bg-white dark:bg-neutral-900 shadow-md" id="el-uwt1gvtw">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-c1advwos">
+        <div class="flex justify-between h-16" id="el-x3oc6oqv">
+          <div class="flex items-center" id="el-3polxr9f">
+            <a href="#" class="flex-shrink-0 flex items-center" id="el-7f5c93oj">
+              <span class="text-2xl font-bold text-green-700 dark:text-green-500" id="el-bbk98swq" contenteditable="false">PlantCare</span>
+            </a>
+          </div>
+          
+          <!-- Desktop menu -->
+          <div class="hidden md:flex items-center space-x-4" id="el-erh3a52w">
+            <a href="#how-it-works" class="text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-neutral-800 hover:text-green-700 dark:hover:text-green-500 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" id="el-r8wxrlqy">How It Works</a>
+          </div>
+          
+          <!-- Mobile menu button -->
+          <div class="flex md:hidden items-center" id="el-hirlwbw6">
+            <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-green-700 dark:hover:text-green-500 hover:bg-green-100 dark:hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500" aria-expanded="false" aria-controls="mobile-menu">
+              <span class="sr-only" id="el-2jp9d3jd">Open main menu</span>
+              <!-- Icon when menu is closed -->
+              <svg id="menu-closed-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" id="el-f0plry4t"></path>
+              </svg>
+              <!-- Icon when menu is open -->
+              <svg id="menu-open-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" id="el-dv6ca3i2"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, show/hide based on menu state. -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-neutral-900 shadow-lg">
+        <div class="px-2 pt-2 pb-3 space-y-1" id="el-iykd1bt5">
+          <a href="#how-it-works" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-green-100 dark:hover:bg-neutral-800 hover:text-green-700 dark:hover:text-green-500 transition-colors duration-200" id="el-v27wjssa">How It Works</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+
+              
+</element><element id="096e8c0a-7214-48bc-8d5f-1e60bc356895" data-section-id="096e8c0a-7214-48bc-8d5f-1e60bc356895">
+ 
+<div id="root">
+  <section id="hero" class="bg-gradient-to-br from-green-50 to-green-100 dark:from-neutral-900 dark:to-neutral-800 py-16 md:py-20 lg:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-46tc195t">
+      <div class="flex flex-col lg:flex-row items-center" id="el-u93gw6tp">
+        <!-- Left column: Text content -->
+        <div class="lg:w-1/2 mb-10 lg:mb-0 lg:pr-10" id="el-5bg718uu">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6" id="el-7s7rycju">
+            <span class="block text-green-700 dark:text-green-500" id="el-rvonhb3w">Identify Plant Diseases</span>
+            <span class="block" id="el-qe63y53x">With a Deep Learning Model</span>
+          </h1>
+          <p class="text-lg text-gray-700 dark:text-gray-300 mb-8" id="el-ur63if0e">
+            Upload a photo of your plant and get instant results. Our Deep Learning model can detect common plant diseases and provide treatment recommendations to help your plants thrive.
+          </p>
+
+          <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4" id="el-nxxt2v8i">
+            <!-- Image Upload Input -->
+            <input type="file" id="imageUpload" accept="image/*" class="hidden">
+        
+            <!-- Get Results Button -->
+            <button onclick="showResult()" class="inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200" id="el-eeky8rsw">
+                Get results
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor" id="el-0w53jgh1">
+                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" id="el-ssz13w1o"></path>
+                </svg>
+            </button>
+        
+            <!-- Learn More Button -->
+            <a href="#how-it-works" class="inline-flex justify-center items-center px-6 py-3 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-neutral-800 hover:bg-gray-50 dark:hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200" id="el-i0t7mmyc">
+                Learn More
+            </a>
+            <!-- Prediction Box -->
+<div id="resultBox" class="hidden mt-4 p-4 border border-gray-300 bg-gray-100 rounded-md text-center text-lg font-semibold">
+  Prediction will appear here.
+</div>
+      </div>
+        <!-- Result Display -->
+        <div class="result-box mt-4 p-4 border border-gray-300 rounded-md bg-white shadow-sm hidden" id="resultBox"></div>
+        </div>
+        
+        <!-- Right column: Illustration/Demo -->
+        <div class="lg:w-1/2 relative" id="el-1jmu3jzq">
+          <div class="bg-white dark:bg-neutral-800 rounded-lg shadow-xl overflow-hidden transform transition-all hover:scale-105 duration-300" id="el-f10pecrl">
+            <div class="p-6 border-b border-gray-200 dark:border-neutral-700" id="el-q8qtbxbw">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white flex items-center" id="el-skrr7dyu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-green-600 dark:text-green-500" viewBox="0 0 20 20" fill="currentColor" id="el-01rua4fn">
+                  <path fill-rule="evenodd" d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd" id="el-0ex2yqlo"></path>
+                </svg>
+                Plant Disease Detector
+              </h3>
+            </div>
+
+            <div class="p-4 bg-white dark:bg-neutral-800 border-t border-gray-200 dark:border-neutral-700 flex justify-center">
+              <span class="inline-flex rounded-md shadow-sm">
+                  <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                  <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200" id="uploadButton">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                          <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                      </svg>
+                      Upload Image
+                  </button>
+              </span>
+          </div>
+          
+          <!-- Image Preview -->
+          <div class="flex justify-center mt-4">
+            <div style="width: 300px; height: 300px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+              <img id="imagePreview" src="" alt="Image Preview" style="display: none; width: 100%; height: 100%; object-fit: contain;">
+            </div>
+          </div>  </div>
+          
+          <!-- Decorative elements -->
+          <div class="absolute -top-4 -right-4 w-24 h-24 bg-green-200 dark:bg-green-900 rounded-full opacity-70 dark:opacity-30 blur-xl" id="el-e3qxll8y"></div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-yellow-200 dark:bg-yellow-900 rounded-full opacity-70 dark:opacity-20 blur-xl" id="el-6uf1e8x0"></div>
+        </div>
+      </div>
+      
+      <!-- Trust indicators -->
+      <div class="mt-16 border-t border-gray-200 dark:border-neutral-700 pt-8" id="el-i5u8awts">
+        
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-4" id="el-j3zxjbgq">
+          <div class="flex items-center" id="el-g3om2mv8">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 dark:text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor" id="el-phezv3uo">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-137lv6qz"></path>
+            </svg>
+            <span class="text-gray-600 dark:text-gray-300" id="el-9gp7stcp" contenteditable="false">91.68% Accuracy</span>
+          </div>
+          <div class="flex items-center" id="el-2rdpqi4g">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 dark:text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor" id="el-dnwfnx7l">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-8tfyobmb"></path>
+            </svg>
+            <span class="text-gray-600 dark:text-gray-300" id="el-nu8sb8c6" contenteditable="false">12 Plant Diseases</span>
+          </div>
+          <div class="flex items-center" id="el-h83w7qtt">
+          </div>
+          <div class="flex items-center" id="el-5impdm50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-600 dark:text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor" id="el-9lbobgol">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-52860lxw"></path>
+            </svg>
+            <span class="text-gray-600 dark:text-gray-300" id="el-e0bizddv">Instant Results</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+         
+<div id="root">
+  <section id="how-it-works" class="py-16 bg-gray-50 dark:bg-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-ni0iujfv">
+      <div class="text-center mb-12" id="el-kbbhkmtz">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4" id="el-vfv7gpap">How Plant Disease Detection Works</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" id="el-cg53a1zo">
+          Our Deep Learning model analyzes plant images to quickly identify diseases.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 mt-12" id="el-knl3xs8j">
+        <!-- Step 1 -->
+        <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" id="el-9w2gl1u0">
+          <div class="p-6" id="el-d8cueuq6">
+            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-5" id="el-fb2vmbwt">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 dark:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-mjeqrw7b">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" id="el-jkzu61uj"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" id="el-hrmh823g"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3" id="el-ylgv508b">1. Upload an Image</h3>
+            <p class="text-gray-600 dark:text-gray-300" id="el-l9m0xvnv">
+              Take a clear photo of the affected plant leaf showing symptoms. Upload it using our file selector.
+            </p>
+            <div class="mt-6 bg-gray-50 dark:bg-neutral-800 p-4 rounded-lg" id="el-9dbjwdlg">
+              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" id="el-w26djalm">Best Practices:</h4>
+              <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1" id="el-a3v8utux">
+                <li class="flex items-start" id="el-y4nd7vsp">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-ihwytwrn">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-tjjry4an"></path>
+                  </svg>
+                  Use good lighting and a clean background.
+                </li>
+                <li class="flex items-start" id="el-lx8mety4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-pen25jkj">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-iada3b26"></path>
+                  </svg>
+                  Focus on the affected area
+                </li>
+                <li class="flex items-start" id="el-alrdbt9m">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-qb0p6aa6">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-oj8e4c1x"></path>
+                  </svg>
+                  Ensure the image is clear, not blurry
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" id="el-5d49xdp6">
+          <div class="p-6" id="el-gf1qy6y2">
+            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-5" id="el-oq64zgzj">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 dark:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-mkfe8tit">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" id="el-6jivaqiw"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3" id="el-wwoyku4h">2. Model Analysis</h3>
+            <p class="text-gray-600 dark:text-gray-300" id="el-ef883ij1">
+              Our sophisticated Deep Learning model analyzes the image, comparing it against thousands of examples of plant diseases. The system identifies patterns, discolorations, and abnormalities.
+            </p>
+            <div class="mt-6 bg-gray-50 dark:bg-neutral-800 p-4 rounded-lg" id="el-6r9wqznc">
+              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" id="el-6e17jkbr">Technology Behind It:</h4>
+              <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1" id="el-gkdpff96">
+                <li class="flex items-start" id="el-g87j6tm2">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-7016naf2">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" id="el-2fz1npuu"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" id="el-bp7l6p6e"></path>
+                  </svg>
+                  Deep learning neural networks
+                </li>
+                <li class="flex items-start" id="el-fr3hkwxr">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-y8nkrp63">
+                    <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" id="el-qvyrcldr"></path>
+                    <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" id="el-5m9h4yxf"></path>
+                  </svg>
+                  Trained on 20,000+ plant images
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" id="el-v6d1m540">
+          <div class="p-6" id="el-f2r7xk2n">
+            <div class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-5" id="el-9r00y4ey">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 dark:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="el-uyv9t89r">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" id="el-i9bpg7hc"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-3" id="el-xx97vo3q">3. Results &amp; Solutions</h3>
+            <p class="text-gray-600 dark:text-gray-300" id="el-ln225h4x">
+              Receive instant results about the detected disease. We also provide specific treatment recommendations.
+            </p>
+            <div class="mt-6 bg-gray-50 dark:bg-neutral-800 p-4 rounded-lg" id="el-ltzca5le">
+              <h4 class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2" id="el-1hgmjwsu">What You Get:</h4>
+              <ul class="text-sm text-gray-600 dark:text-gray-400 space-y-1" id="el-8r27gz4i">
+                <li class="flex items-start" id="el-oe7t8geu">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-wgcupndg">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-4wvun11j"></path>
+                  </svg>
+                  Disease identification
+                </li>
+                <li class="flex items-start" id="el-kf6m3sig">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-fmtyvphi">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" id="el-zvrnm5ds"></path>
+                  </svg>
+                  Treatment recommendations
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+              
+</element><element id="1414b1f7-1f64-48e7-8308-b997f249f93e" data-section-id="1414b1f7-1f64-48e7-8308-b997f249f93e">
+      
+</element><element id="d05ee380-664f-4370-90f2-f427cbfdeb08" data-section-id="d05ee380-664f-4370-90f2-f427cbfdeb08">
+
+
+                
+  <div id="root">
+    <section id="disease-insights" class="py-16 bg-gray-50 dark:bg-neutral-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="el-cy47oujl">
+        <div class="text-center mb-12" id="el-6l7kia1h">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4" id="el-07snvw8q">Common Plant Diseases</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto" id="el-ddjhyy7e">
+            Learn about frequently occurring plant diseases, their symptoms, and how to effectively treat them.
+          </p>
+        </div>
+
+        <!-- Disease Cards -->
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3" id="el-n603meff">
+
+          <!-- Disease Card 1 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-dw89p6tx">
+            <div class="p-1 bg-red-500" id="el-iuyhpao7"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-ey1mzk6t">
+              <div class="flex items-center justify-between mb-4" id="el-qletqmgr">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-oysm9voz">Pepper Bell Bacterial Spot</h3>
+              </div>
+  
+              <div class="mb-4" id="el-hnfol7dx">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-oavicrcl">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-ycid9ros">
+                  <li class="flex items-start" id="el-bjkx2phx">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-cpwwccaq">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-rnfrmbfr"></path>
+                    </svg>
+                    Scabby, irregular lesions on leaves and fruit
+                  </li>
+                  <li class="flex items-start" id="el-21myr1u8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-pm6xhpgc">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-6hnm9c1v"></path>
+                    </svg>
+                    Leaf drop
+                  </li>
+                  <li class="flex items-start" id="el-dgocf5op">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mppz155a">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-5sg3ir9s"></path>
+                    </svg>
+                    Reduced yield
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-559uyd72">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-aat5odcd">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-1w6wcpwq">
+                  Apply copper-based bactericides every 7-10 days. Avoid overhead watering to minimize moisture and practice crop rotation to prevent further infection.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-ve2mdpsm">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 2 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-n6h96sm2">
+            <div class="p-1 bg-yellow-500" id="el-p7tq9ts4"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-xkoyry5n">
+              <div class="flex items-center justify-between mb-4" id="el-osgvxlgf">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-3sogub9i">Potato Early Blight</h3>
+              </div>
+  
+              <div class="mb-4" id="el-dcbcrgrd">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-0iq5trlz">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-thoo072v">
+                  <li class="flex items-start" id="el-d8urqp69">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-dqatpwdw">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-7xvx3evo"></path>
+                    </svg>
+                    Brown lesions with concentric rings on leaves and stems
+                  </li>
+                  <li class="flex items-start" id="el-aj6oojai">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-atfiw3di">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-qoo3zgho"></path>
+                    </svg>
+                    Yellowing and defoliation
+                  </li>
+                  <li class="flex items-start" id="el-3pqc9h44">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-4psvic3f">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-e0swcq5o"></path>
+                    </svg>
+                    Dark, sunken lesions on tubers
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-nbt4cqdm">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-w4us8gt7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-s85w29ju">
+                  Use fungicides like chlorothalonil or mancozeb. Ensure proper plant spacing for air circulation, and practice crop rotation with non-host plants like corn or beans.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-m7ad2wm1">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 3 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-bmz1okl8">
+            <div class="p-1 bg-green-500" id="el-cfb4ydch"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-b3vjyppy">
+              <div class="flex items-center justify-between mb-4" id="el-wjlpydf0">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-spznoxrl">Potato Late Blight</h3>
+              </div>
+  
+              <div class="mb-4" id="el-sux3g3m4">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-bheu5u25">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-6yrup4xg">
+                  <li class="flex items-start" id="el-1m8z88ne">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-ncnoxoqj">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-crnzwfjl"></path>
+                    </svg>
+                    Water-soaked lesions on leaves and stems
+                  </li>
+                  <li class="flex items-start" id="el-v0zu63hd">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mfsuemkb">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-aukn4fox"></path>
+                    </svg>
+                    White mold growth under leaves
+                  </li>
+                  <li class="flex items-start" id="el-lix46j8g">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-bnl5ff4d">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-p80mywkh"></path>
+                    </svg>
+                    Brown, firm rot in tubers
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-wgjpi68d">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-c1bzm5e7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-vgl1m6jd">
+                  Apply fungicides containing chlorothalonil or copper hydroxide. Avoid overhead watering and use resistant potato varieties like 'Defender' or 'Elba.'
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-rvf7e1ys">
+                
+              </div>
+            </div>
+          </div>
+                    
+          <!-- Disease Card 4 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-dw89p6tx">
+            <div class="p-1 bg-red-500" id="el-iuyhpao7"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-ey1mzk6t">
+              <div class="flex items-center justify-between mb-4" id="el-qletqmgr">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-oysm9voz">Tomato Bacterial Spot</h3>
+              </div>
+  
+              <div class="mb-4" id="el-hnfol7dx">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-oavicrcl">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-ycid9ros">
+                  <li class="flex items-start" id="el-bjkx2phx">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-cpwwccaq">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-rnfrmbfr"></path>
+                    </svg>
+                    Small, water-soaked spots on leaves and fruit
+                  </li>
+                  <li class="flex items-start" id="el-21myr1u8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-pm6xhpgc">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-6hnm9c1v"></path>
+                    </svg>
+                    Spots may merge, causing leaf yellowing and drop
+                  </li>
+                  <li class="flex items-start" id="el-dgocf5op">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mppz155a">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-5sg3ir9s"></path>
+                    </svg>
+                    Scabby lesions on fruit
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-559uyd72">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-aat5odcd">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-1w6wcpwq">
+                  Apply copper-based bactericides regularly. Avoid working with wet plants, use disease-free seeds, and rotate crops to non-host plants like legumes.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-ve2mdpsm">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 5 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-n6h96sm2">
+            <div class="p-1 bg-yellow-500" id="el-p7tq9ts4"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-xkoyry5n">
+              <div class="flex items-center justify-between mb-4" id="el-osgvxlgf">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-3sogub9i">Tomato Early Blight</h3>
+              </div>
+  
+              <div class="mb-4" id="el-dcbcrgrd">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-0iq5trlz">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-thoo072v">
+                  <li class="flex items-start" id="el-d8urqp69">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-dqatpwdw">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-7xvx3evo"></path>
+                    </svg>
+                    Dark, concentric lesions on older leaves
+                  </li>
+                  <li class="flex items-start" id="el-aj6oojai">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-atfiw3di">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-qoo3zgho"></path>
+                    </svg>
+                    Yellowing and defoliation
+                  </li>
+                  <li class="flex items-start" id="el-3pqc9h44">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-4psvic3f">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-e0swcq5o"></path>
+                    </svg>
+                    Lesions on stems and fruit near the stem end
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-nbt4cqdm">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-w4us8gt7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-s85w29ju">
+                  Use fungicides such as chlorothalonil, mancozeb, or copper-based products. Mulch around the plant base to reduce soil splash and maintain proper spacing for airflow.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-m7ad2wm1">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 6 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-bmz1okl8">
+            <div class="p-1 bg-green-500" id="el-cfb4ydch"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-b3vjyppy">
+              <div class="flex items-center justify-between mb-4" id="el-wjlpydf0">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-spznoxrl">Tomato Late Blight</h3>
+              </div>
+  
+              <div class="mb-4" id="el-sux3g3m4">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-bheu5u25">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-6yrup4xg">
+                  <li class="flex items-start" id="el-1m8z88ne">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-ncnoxoqj">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-crnzwfjl"></path>
+                    </svg>
+                    Large, water-soaked lesions on leaves and stems
+                  </li>
+                  <li class="flex items-start" id="el-v0zu63hd">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mfsuemkb">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-aukn4fox"></path>
+                    </svg>
+                    White mold growth under leaves
+                  </li>
+                  <li class="flex items-start" id="el-lix46j8g">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-bnl5ff4d">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-p80mywkh"></path>
+                    </svg>
+                    Brown, firm rot in fruit
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-wgjpi68d">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-c1bzm5e7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-vgl1m6jd">
+                  Apply fungicides like mancozeb or fluazinam. Provide adequate ventilation and spacing between plants, and use disease-resistant varieties like 'Mountain Magic.'
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-rvf7e1ys">
+                
+              </div>
+            </div>
+          </div>
+
+                    
+          <!-- Disease Card 7 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-dw89p6tx">
+            <div class="p-1 bg-red-500" id="el-iuyhpao7"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-ey1mzk6t">
+              <div class="flex items-center justify-between mb-4" id="el-qletqmgr">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-oysm9voz">Tomato Leaf Mold</h3>
+              </div>
+  
+              <div class="mb-4" id="el-hnfol7dx">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-oavicrcl">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-ycid9ros">
+                  <li class="flex items-start" id="el-bjkx2phx">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-cpwwccaq">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-rnfrmbfr"></path>
+                    </svg>
+                    Yellow spots on upper leaf surfaces
+                  </li>
+                  <li class="flex items-start" id="el-21myr1u8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-pm6xhpgc">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-6hnm9c1v"></path>
+                    </svg>
+                    Olive-green to gray mold on undersides
+                  </li>
+                  <li class="flex items-start" id="el-dgocf5op">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mppz155a">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-5sg3ir9s"></path>
+                    </svg>
+                    Leaf drop
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-559uyd72">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-aat5odcd">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-1w6wcpwq">
+                  Apply fungicides like chlorothalonil or copper-based products. Improve air circulation by ensuring wider plant spacing and avoid overhead watering.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-ve2mdpsm">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 8 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-n6h96sm2">
+            <div class="p-1 bg-yellow-500" id="el-p7tq9ts4"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-xkoyry5n">
+              <div class="flex items-center justify-between mb-4" id="el-osgvxlgf">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-3sogub9i">Tomato Septoria Leaf Spot</h3>
+              </div>
+  
+              <div class="mb-4" id="el-dcbcrgrd">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-0iq5trlz">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-thoo072v">
+                  <li class="flex items-start" id="el-d8urqp69">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-dqatpwdw">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-7xvx3evo"></path>
+                    </svg>
+                    Small, circular spots with gray centers and dark borders on leaves
+                  </li>
+                  <li class="flex items-start" id="el-aj6oojai">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-atfiw3di">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-qoo3zgho"></path>
+                    </svg>
+                    Yellowing and defoliation
+                  </li>
+                  <li class="flex items-start" id="el-3pqc9h44">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-4psvic3f">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-e0swcq5o"></path>
+                    </svg>
+                    Reduced yield
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-nbt4cqdm">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-w4us8gt7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-s85w29ju">
+                  Apply fungicides containing chlorothalonil or mancozeb. Ensure good air circulation, avoid overhead watering, and practice crop rotation.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-m7ad2wm1">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 9 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-bmz1okl8">
+            <div class="p-1 bg-green-500" id="el-cfb4ydch"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-b3vjyppy">
+              <div class="flex items-center justify-between mb-4" id="el-wjlpydf0">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-spznoxrl">Tomato Spider Mites</h3>
+              </div>
+  
+              <div class="mb-4" id="el-sux3g3m4">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-bheu5u25">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-6yrup4xg">
+                  <li class="flex items-start" id="el-1m8z88ne">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-ncnoxoqj">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-crnzwfjl"></path>
+                    </svg>
+                    Speckled or bronzed leaves
+                  </li>
+                  <li class="flex items-start" id="el-v0zu63hd">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mfsuemkb">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-aukn4fox"></path>
+                    </svg>
+                    Fine webbing on leaves and stems
+                  </li>
+                  <li class="flex items-start" id="el-lix46j8g">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-bnl5ff4d">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-p80mywkh"></path>
+                    </svg>
+                    Stunted growth
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-wgjpi68d">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-c1bzm5e7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-vgl1m6jd">
+                  Use insecticidal soap or neem oil spray. Introduce natural predators like ladybugs, maintain humidity levels, and rinse plants with water to dislodge mites.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-rvf7e1ys">
+                
+              </div>
+            </div>
+          </div>
+               
+          <!-- Disease Card 10 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-dw89p6tx">
+            <div class="p-1 bg-red-500" id="el-iuyhpao7"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-ey1mzk6t">
+              <div class="flex items-center justify-between mb-4" id="el-qletqmgr">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-oysm9voz">Tomato Target Spot</h3>
+              </div>
+  
+              <div class="mb-4" id="el-hnfol7dx">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-oavicrcl">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-ycid9ros">
+                  <li class="flex items-start" id="el-bjkx2phx">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-cpwwccaq">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-rnfrmbfr"></path>
+                    </svg>
+                    Brown spots with concentric rings on leaves
+                  </li>
+                  <li class="flex items-start" id="el-21myr1u8">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-pm6xhpgc">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-6hnm9c1v"></path>
+                    </svg>
+                    Lesions on stems and fruit
+                  </li>
+                  <li class="flex items-start" id="el-dgocf5op">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mppz155a">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-5sg3ir9s"></path>
+                    </svg>
+                    Leaf drop
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-559uyd72">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-aat5odcd">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-1w6wcpwq">
+                  Apply fungicides like azoxystrobin or chlorothalonil. Ensure proper spacing for air circulation, avoid overhead watering, and keep the plant environment dry.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-ve2mdpsm">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 11 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-n6h96sm2">
+            <div class="p-1 bg-yellow-500" id="el-p7tq9ts4"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-xkoyry5n">
+              <div class="flex items-center justify-between mb-4" id="el-osgvxlgf">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-3sogub9i">Tomato Yellow Leaf Curl Virus</h3>
+              </div>
+  
+              <div class="mb-4" id="el-dcbcrgrd">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-0iq5trlz">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-thoo072v">
+                  <li class="flex items-start" id="el-d8urqp69">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-dqatpwdw">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-7xvx3evo"></path>
+                    </svg>
+                    Yellowing and upward curling of leaves
+                  </li>
+                  <li class="flex items-start" id="el-aj6oojai">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-atfiw3di">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-qoo3zgho"></path>
+                    </svg>
+                    Stunted growth
+                  </li>
+                  <li class="flex items-start" id="el-3pqc9h44">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-4psvic3f">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-e0swcq5o"></path>
+                    </svg>
+                    Reduced fruit set
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-nbt4cqdm">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-w4us8gt7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-s85w29ju">
+                  Control whitefly populations using insecticides or reflective mulch. Use virus-resistant tomato varieties like 'TYLCV-resistant' hybrids.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-m7ad2wm1">
+                
+              </div>
+            </div>
+          </div>
+  
+          <!-- Disease Card 12 -->
+          <div class="bg-white dark:bg-neutral-900 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300" id="el-bmz1okl8">
+            <div class="p-1 bg-green-500" id="el-cfb4ydch"></div> <!-- Severity indicator -->
+            <div class="p-6" id="el-b3vjyppy">
+              <div class="flex items-center justify-between mb-4" id="el-wjlpydf0">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="el-spznoxrl">Tomato Mosaic Virus</h3>
+              </div>
+  
+              <div class="mb-4" id="el-sux3g3m4">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-bheu5u25">Symptoms</h4>
+                <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1" id="el-6yrup4xg">
+                  <li class="flex items-start" id="el-1m8z88ne">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-ncnoxoqj">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-crnzwfjl"></path>
+                    </svg>
+                    Mottled light and dark green patterns on leaves
+                  </li>
+                  <li class="flex items-start" id="el-v0zu63hd">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-mfsuemkb">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-aukn4fox"></path>
+                    </svg>
+                    Leaf curling and distortion
+                  </li>
+                  <li class="flex items-start" id="el-lix46j8g">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-1.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" id="el-bnl5ff4d">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" id="el-p80mywkh"></path>
+                    </svg>
+                    Stunted growth
+                  </li>
+                </ul>
+              </div>
+  
+              <div id="el-wgjpi68d">
+                <h4 class="text-sm font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2" id="el-c1bzm5e7">Treatment</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-300 mb-3" id="el-vgl1m6jd">
+                  Disinfect tools and hands after plant contact, and apply insecticidal soap to control aphids and other virus-transmitting pests. Use disease-resistant seeds to prevent future infections.
+                </p>
+              </div>
+  
+              <div class="mt-5" id="el-rvf7e1ys">
+                
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+  </div>
+              
+</element></div>
+      </main>
+      <!-- {bodyScripts} -->
+      <script>
+document.getElementById("uploadButton").addEventListener("click", function () {
+    document.getElementById("imageUpload").click();
+});
+
+document.getElementById("imageUpload").addEventListener("change", function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const imagePreview = document.getElementById("imagePreview");
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+function showResult() {
+    const fileInput = document.getElementById('imageUpload');
+    if (!fileInput.files || fileInput.files.length === 0) {
+        alert("Please upload an image first.");
+        return;
+    }
+
+    const formData = new FormData();
+    formData.append("file", fileInput.files[0]);
+
+    fetch("http://127.0.0.1:5000/predict", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        const resultBox = document.getElementById('resultBox');
+        resultBox.innerText = `Prediction: ${data.prediction}`;
+        resultBox.classList.remove('hidden'); // Show result
+    })
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Error fetching prediction. Please try again.");
+    });
+}
+      </script>
+      
+   </body>
+</html>
