@@ -6,6 +6,7 @@ import io
 import os
 from flask_cors import CORS
 from scipy.stats import entropy
+import cv2
 
 # Define class names
 class_names = [
@@ -90,7 +91,7 @@ app = Flask(__name__, static_folder=FRONTEND_DIR, template_folder=FRONTEND_DIR)
 CORS(app)  # Allow cross-origin requests
 
 # Load the trained model
-MODEL_PATH = os.path.join(BASE_DIR,"mobilenet_finetuned_best2.h5")
+MODEL_PATH = os.path.join(BASE_DIR,"mobilenet_finetuned_best3.h5")
 
 # Check if model file exists before loading
 if not os.path.exists(MODEL_PATH):
@@ -98,14 +99,23 @@ if not os.path.exists(MODEL_PATH):
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
-# Function to preprocess image
-def preprocess_image(image):
-    image = image.resize((224, 224))  # Resize to model input size
-    image = np.array(image)  # Convert to numpy array
+from PIL import Image, ImageOps
+import numpy as np
 
-    image = image / 255.0  # Normalize pixel values
+def preprocess_image(image):
+    # Convert to RGB (in case of grayscale or other formats)
+    image = image.convert('RGB')
+    
+    # Maintain aspect ratio using padding
+    desired_size = 224
+    image = ImageOps.pad(image, (desired_size, desired_size), color=(0, 0, 0))
+    
+    # Convert to numpy array
+    image = np.array(image) / 255.0  # Normalize pixel values
     image = np.expand_dims(image, axis=0)  # Add batch dimension
+    
     return image
+
 
 # Serve the frontend file
 @app.route("/")
